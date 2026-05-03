@@ -1,0 +1,2 @@
+first_order_customers,users_with_session,browsing_users,cart_users,checkout_users,repeat_users,session_rate,browsing_rate,cart_rate,checkout_rate,repeat_rate,browse_from_session_rate,cart_from_browse_rate,checkout_from_cart_rate,repeat_from_checkout_rate
+7824,4351,3829,1708,927,1016,55.61,48.94,21.83,11.85,12.99,88.00,44.61,54.27,109.60
