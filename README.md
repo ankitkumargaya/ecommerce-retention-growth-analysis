@@ -4,96 +4,147 @@
 
 This project is an end-to-end product analytics case study focused on identifying **why business growth is slowing despite steady customer acquisition**.
 
-The analysis uncovers key lifecycle bottlenecks affecting **customer retention, repeat purchase behavior, and long-term revenue growth**.
+The analysis evaluates the complete customer lifecycle — from acquisition to repeat purchase — to uncover **retention gaps, funnel inefficiencies, and growth constraints**.
 
 ---
 
-## 🎯 Business Problem
+## 🎯 Business Objective
 
-The business is acquiring customers efficiently with a strong **LTV/CAC ratio (~3.67)**, yet revenue growth remains stagnant.
+The business shows strong acquisition and healthy marketing efficiency (LTV/CAC > 3), but **revenue growth is not scaling proportionally**.
 
-### Key Question:
-> Why is growth not scaling despite consistent acquisition?
-
----
-
-## 🧠 Objective
-
-- Identify where customers drop in the lifecycle
-- Analyze repeat purchase behavior and retention trends
-- Evaluate acquisition channel quality
-- Diagnose bottlenecks impacting LTV and revenue
-- Recommend strategies to shift from acquisition-led to retention-led growth
+### Key Goal:
+- Identify where customers drop in the lifecycle  
+- Improve early-stage engagement and repeat purchase behavior  
+- Increase long-term customer value (LTV)  
+- Shift from **acquisition-led growth → retention-led growth**
 
 ---
 
-## 📊 Dataset & Data Model
+## 🧠 Analytical Approach
 
-The project uses a multi-table e-commerce dataset (~50K+ records), simulating real-world business scenarios.
+The analysis is structured across key growth layers:
 
-### Tables:
-- `customers` – user demographics & acquisition source
-- `user_sessions` – website/app engagement
-- `orders` – transactions & revenue
-- `order_items` – product-level details
-- `returns` – return behavior
-- `marketing_events` – campaign tracking
+- Acquisition → Channel performance & customer quality  
+- Activation → First to second purchase behavior  
+- Conversion → Funnel drop-off analysis  
+- Retention → Cohort retention trends  
+- Monetization → LTV, CAC, and revenue impact  
 
 ---
 
-## 🛠 Tools & Technologies
+## 🧱 Data Architecture (Bronze → Silver → Gold)
 
-- **Python (Pandas, NumPy)** → Data cleaning & preprocessing  
-- **Databricks (Spark SQL)** → Data transformation, Gold layer tables, analysis  
-- **Power BI** → Dashboarding & business storytelling  
+### 🔹 Analytics Tables (Cleaned Data)
+
+- `customers` → Customer details & acquisition channel  
+- `sessions` → User activity and engagement  
+- `orders` → Order-level transactions  
+- `order_items` → Order-level breakdown  
+- `returns` → Return behavior  
+- `marketing_events` → Campaign interactions  
+- `marketing_spend` → Channel-level acquisition cost  
 
 ---
 
-## 📈 Key Analysis Performed
+### 🥇 Gold Layer (Business-Ready Tables)
+
+#### `activation_funnel`
+Tracks user journey across stages:
+- Session → Browsing → Cart → Checkout → Repeat  
+
+Includes:
+- Conversion rates at each stage  
+- Drop-off identification  
+
+---
+
+#### `channel_ltv`
+Channel-level performance:
+- Total customers & orders  
+- Revenue (gross & net)  
+- Avg Customer LTV  
+- Orders per customer  
+
+---
+
+#### `customer_lifecycle`
+Customer-level behavior:
+- First & second order tracking  
+- Days to second purchase  
+- Repeat flags (30-day)  
+- Lifecycle segmentation  
+
+---
+
+#### `retention_cohort`
+Cohort-based retention:
+- Monthly retention tracking  
+- Active users vs cohort size  
+- Retention rate trends  
+
+---
+
+## 📊 Key Analysis Performed
 
 - Customer acquisition performance by channel  
 - Customer lifecycle & time to second purchase  
 - Cohort retention analysis  
-- Customer activation funnel (Session → Browsing → Cart → Checkout → Repeat)  
-- Marketing efficiency using CAC, LTV, and LTV/CAC  
+- Activation funnel analysis (Session → Repeat)  
+- Marketing efficiency using CAC, LTV, LTV/CAC  
 
 ---
 
 ## 🔍 Key Insights
 
-### 1. Growth Driven by Acquisition, Not Retention
-- 30-day repeat rate is only **~13%**
-- Majority of users do not return after first purchase
+### 1. Growth is Acquisition-Driven, Not Retention-Driven
+- LTV/CAC ≈ **3.67** (strong efficiency)  
+- But 30-day repeat rate only **~13%**  
 
-👉 Indicates unsustainable, acquisition-heavy growth
-
----
-
-### 2. Early Lifecycle is the Main Bottleneck
-- Avg time to second purchase: **~102 days**
-- Significant drop in early engagement
-
-👉 Customers are not getting activated quickly
+👉 Business relies heavily on new users → **unsustainable growth model**
 
 ---
 
-### 3. Major Funnel Drop: Browsing → Add to Cart
-- Largest drop-off occurs before purchase intent
+### 2. Early Customer Activation is the Biggest Bottleneck
+- Avg time to second purchase: **~102 days**  
+- Large segment of users delay or never repeat  
 
-👉 Indicates friction in decision-making stage
+👉 Weak habit formation → delayed revenue realization  
+
+---
+
+### 3. Major Funnel Drop at Browsing → Add to Cart
+- Highest drop-off occurs before purchase intent  
+
+👉 Indicates **decision friction**, not technical issue  
+
+Possible causes:
+- Weak product trust  
+- Pricing perception  
+- Lack of urgency  
 
 ---
 
 ### 4. Retention Stabilizes After Initial Drop
-- Cohort retention stabilizes at **12–15%**
+- Cohort retention stabilizes at **~12–15%**  
 
-👉 Problem is early churn, not long-term retention
+👉 Long-term retention is stable  
+👉 Problem lies in **early-stage churn**
 
 ---
 
-### 5. Channel Quality Varies Significantly
-- **Referral & Influencer channels** → highest LTV/CAC
-- Paid channels bring volume but lower efficiency
+### 5. Channel Quality Matters More Than Volume
+- Referral & Influencer → Highest LTV/CAC  
+- Paid Ads → Lower efficiency  
+
+👉 Not all customers are equal → **quality over quantity**
+
+---
+
+### 6. Revenue Trend Indicates Growth Plateau
+- Revenue remains relatively stable despite acquisition  
+
+👉 Confirms:
+> Growth bottleneck is **retention, not acquisition**
 
 ---
 
@@ -105,50 +156,55 @@ The project uses a multi-table e-commerce dataset (~50K+ records), simulating re
 
 ## 💡 Recommendations
 
-### 🚀 Improve Early Activation
-- Post-purchase engagement campaigns
-- Time-bound repeat purchase incentives
+### 🚀 Improve Early Activation (Highest Impact)
+- Post-purchase engagement (Day 1, Day 3, Day 7)
+- Time-bound repeat purchase incentives  
 
-**Impact:** Faster repeat behavior, higher LTV
+**Why:**  
+Reduces time to second purchase → increases LTV  
 
 ---
 
-### 🚀 Optimize Browse → Cart Conversion
-- Improve product trust (reviews, ratings)
-- Add urgency (limited stock, offers)
+### 🚀 Optimize Browsing → Cart Conversion
+- Add trust signals (reviews, ratings)  
+- Introduce urgency (offers, stock alerts)  
 
-**Impact:** Increased conversion rate
+**Why:**  
+Biggest funnel drop → highest ROI improvement  
 
 ---
 
 ### 🚀 Scale High-ROI Channels
-- Invest more in Referral & Influencer marketing
+- Increase investment in Referral & Influencer  
 
-**Impact:** Better customer quality and retention
+**Why:**  
+Higher retention + better LTV  
 
 ---
 
 ### 🚀 Retarget First-Time Buyers
-- Target users inactive after 30–60 days
+- Target inactive users after 30–60 days  
 
-**Impact:** Recover lost revenue at low cost
+**Why:**  
+Recover already acquired users at low cost  
 
 ---
 
 ### 🚀 Introduce Personalization
-- Product recommendations
-- Behavioral targeting
+- Behavioral targeting  
+- Product recommendations  
 
-**Impact:** Higher engagement and repeat purchases
+**Why:**  
+Improves engagement and repeat probability  
 
 ---
 
-## 📊 Business Impact (Expected)
+## 📊 Expected Business Impact
 
-- 30-day repeat rate: **13% → 20–25%**
-- Time to second order: **102 → 30–45 days**
-- LTV increase: **+20–40%**
-- Reduced dependency on paid acquisition
+- 30-day repeat rate: **13% → 20–25%**  
+- Time to second order: **102 → 30–45 days**  
+- LTV increase: **+20–40%**  
+- Reduced dependency on paid acquisition  
 
 ---
 
@@ -161,40 +217,19 @@ The project uses a multi-table e-commerce dataset (~50K+ records), simulating re
   - Retention Analysis  
   - Activation Funnel  
 
-- KPI cards for:
-  - Revenue, Orders, Customers  
-  - LTV, CAC, Retention Rate  
+---
 
-- Interactive filters:
-  - Year-Month  
-  - Acquisition Channel  
+### 🔥 Advanced Features Implemented
 
-- Custom navigation & insight buttons  
+- Custom page navigation (app-like experience)  
+- Insight buttons for guided storytelling  
+- Field parameters for dynamic metric switching  
+- Interactive filters (Year-Month, Channel)  
 
 ---
 
 ## 📸 Dashboard Preview
 
-> (Add screenshots here)
+(Add your images here)
 
----
-
-## 🎯 Key Takeaway
-
-> Business growth is not limited by acquisition, but by **failure to activate customers early in the lifecycle**, making retention the most critical lever for scaling revenue.
-
----
-
-## 📌 Future Improvements
-
-- A/B testing for activation strategies  
-- Predictive churn modeling  
-- Customer segmentation (RFM / behavioral)  
-- Recommendation system integration  
-
----
-
-## 👤 Author
-
-**Ankit (Akki)**  
-Aspiring Data Analyst | SQL | Power BI | Product Analytics  
+Example:
