@@ -1,35 +1,34 @@
+# 📊 Dataset
 
-# 📊 Data Files
-
-This project uses a synthetic e-commerce dataset designed to simulate real-world product analytics scenarios.
-
----
-
-## 📁 Dataset Structure
-
-The dataset includes the following tables:
-
-- customers  
-- sessions  
-- orders  
-- order_items  
-- returns  
-- marketing_events  
-- marketing_spend  
+This project uses a structured e-commerce dataset designed for product analytics.
 
 ---
 
-## 📌 Note
+## 📁 Tables Included
 
-Due to file size and privacy considerations, raw datasets are not uploaded.
-
-This repository focuses on:
-- Data modeling  
-- SQL transformations  
-- Business analysis  
+- customers → customer details & acquisition channel  
+- sessions → user engagement data  
+- orders → transaction-level data  
+- order_items → item-level breakdown  
+- returns → return behavior  
+- marketing_events → campaign interactions  
+- marketing_spend → channel-level cost  
 
 ---
 
-## 🔄 Data Flow
+## 📌 Notes
 
-Raw Data → Cleaning → Transformation → Gold Tables → Power BI Dashboard
+- Dataset size is optimized for GitHub (<20MB)  
+- Data is structured for analytical use  
+- Supports cohort analysis, funnel tracking, and LTV calculation  
+
+---
+
+## 🔄 Usage
+
+These datasets are used to build:
+- Gold layer tables (SQL)  
+- Power BI dashboards  
+- Business insights  
+
+---
