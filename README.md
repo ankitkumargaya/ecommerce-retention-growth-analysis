@@ -230,8 +230,6 @@ Improves engagement and repeat probability
 
 ## 📸 Dashboard Preview
 
-## 📸 Dashboard Preview
-
 ### 🔹 Executive Overview
 <p align="center">
   <img src="images/overview.png" width="900">
