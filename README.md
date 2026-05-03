@@ -230,6 +230,39 @@ Improves engagement and repeat probability
 
 ## 📸 Dashboard Preview
 
-(Add your images here)
+## 📸 Dashboard Preview
 
-Example:
+### 🔹 Executive Overview
+<p align="center">
+  <img src="images/overview.png" width="900">
+</p>
+
+---
+
+### 🔹 Acquisition & Channel Performance
+<p align="center">
+  <img src="images/acquisition.png" width="900">
+</p>
+
+---
+
+### 🔹 Customer Lifecycle
+<p align="center">
+  <img src="images/lifecycle.png" width="900">
+</p>
+
+---
+
+### 🔹 Retention Analysis
+<p align="center">
+  <img src="images/retention.png" width="900">
+</p>
+
+---
+
+### 🔹 Activation Funnel
+<p align="center">
+  <img src="images/funnel.png" width="900">
+</p>
+
+
