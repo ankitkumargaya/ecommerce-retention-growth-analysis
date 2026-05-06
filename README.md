@@ -1,5 +1,5 @@
 # 🚀 E-Commerce Customer Retention & Growth Analysis  
-### Product Analytics Case Study | SQL + Python + Power BI + AWS
+### Product Analytics Case Study | Databricks + Spark SQL + Python + Power BI
 
 <p align="center">
   <img src="images/overview.png" width="1000">
@@ -64,40 +64,51 @@ The primary goal of this analysis was to identify:
 
 | Tool / Technology | Purpose |
 |---|---|
-| SQL | Data Analysis & KPI Validation |
+| Databricks (Spark SQL) | Large-Scale Data Processing & Analytical Querying |
+| SQL | KPI Validation & Business Analysis |
 | Python (Pandas, NumPy) | Data Cleaning & Feature Engineering |
-| Power BI | Dashboard Development |
+| Power BI | Dashboard Development & Visualization |
 | DAX | KPI Calculations & Time Intelligence |
-| AWS S3 | Cloud Data Storage |
-| Amazon Athena | Cloud SQL Querying |
 | Power Query | Data Transformation |
 | Star Schema Modeling | Scalable Analytics Architecture |
 
 ---
 
-# ☁️ Cloud Architecture
+# ⚙️ Data Processing & Analytics Workflow
 
-This project uses AWS services to simulate a modern cloud-based analytics workflow.
+This project follows a modern analytics workflow similar to real-world product and e-commerce companies.
 
-## AWS Services Used
+## Workflow Architecture
 
-### 🔹 Amazon S3
-Used for storing:
+Raw Data → Python Cleaning → Databricks Processing (Spark SQL) → Analytical Tables → Power BI Dashboard
 
-- Raw datasets
-- Cleaned analytical tables
-- Processed business-ready files
+---
 
-### 🔹 Amazon Athena
-Used to query large datasets directly from S3 using SQL.
+# 🔥 Databricks & Spark SQL Usage
 
-Athena was used for:
+Databricks and Spark SQL were used to simulate large-scale analytical processing and business KPI validation.
+
+## Spark SQL Analysis Included
 
 - Funnel analysis
 - Retention calculations
-- Channel performance analysis
-- Customer lifecycle analysis
 - Cohort analysis
+- Customer lifecycle analysis
+- Channel performance analysis
+- Repeat purchase analysis
+- LTV & CAC analysis
+- Revenue trend analysis
+
+## Why Spark SQL?
+
+Spark SQL enables scalable analytics processing for large datasets and is widely used in modern cloud-based data platforms.
+
+### Benefits
+
+- Faster large-scale querying
+- Distributed processing
+- Better performance for analytical workloads
+- Real-world big data analytics simulation
 
 ---
 
@@ -350,14 +361,14 @@ The primary growth bottleneck is:
 
 # 1️⃣ Improve Early Customer Activation
 
-### Recommended Actions
+## Recommended Actions
 
 - Day 1 onboarding campaigns
 - Day 3 & Day 7 remarketing
 - Repeat purchase incentives
 - Personalized product recommendations
 
-### Expected Impact
+## Expected Impact
 
 - Faster repeat purchases
 - Increased LTV
@@ -367,14 +378,14 @@ The primary growth bottleneck is:
 
 # 2️⃣ Optimize Browsing → Cart Conversion
 
-### Recommended Actions
+## Recommended Actions
 
 - Add product reviews & ratings
 - Introduce urgency messaging
 - Improve pricing communication
 - Highlight trust indicators
 
-### Expected Impact
+## Expected Impact
 
 Improves highest-drop funnel stage.
 
@@ -382,13 +393,13 @@ Improves highest-drop funnel stage.
 
 # 3️⃣ Scale High-ROI Acquisition Channels
 
-### Recommended Actions
+## Recommended Actions
 
 - Increase Referral investment
 - Expand Influencer partnerships
 - Reduce inefficient ad spend
 
-### Expected Impact
+## Expected Impact
 
 Higher-quality customers with stronger retention.
 
@@ -396,12 +407,12 @@ Higher-quality customers with stronger retention.
 
 # 4️⃣ Retarget First-Time Buyers
 
-### Recommended Actions
+## Recommended Actions
 
 - Re-engage inactive users after 30–60 days
 - Trigger lifecycle-based campaigns
 
-### Expected Impact
+## Expected Impact
 
 Low-cost revenue recovery from already acquired customers.
 
@@ -409,13 +420,13 @@ Low-cost revenue recovery from already acquired customers.
 
 # 5️⃣ Introduce Personalization
 
-### Recommended Actions
+## Recommended Actions
 
 - Behavioral targeting
 - Dynamic product recommendations
 - Personalized offers
 
-### Expected Impact
+## Expected Impact
 
 Improves engagement and repeat probability.
 
@@ -470,13 +481,13 @@ The project includes a multi-page interactive Power BI dashboard.
 - Customer Retention Analysis
 - Funnel Analytics
 - Cohort Analysis
-- LTV & CAC Analysis
+- Customer Lifecycle Analytics
+- Spark SQL
+- Databricks
 - SQL Analytics
 - Power BI Dashboarding
 - DAX Calculations
-- Customer Lifecycle Analytics
 - Data Modeling
-- AWS S3 & Athena
 - Business Intelligence
 - Data Storytelling
 
@@ -541,7 +552,7 @@ This analysis helps stakeholders:
 # 👨‍💻 Author
 
 ## Ankit Kumar  
-Aspiring Data Analyst | Product Analytics | SQL | Power BI | Python | AWS
+Aspiring Data Analyst | Product Analytics | SQL | Power BI | Python | Databricks
 
 - GitHub: https://github.com/ankitkumargaya
 - LinkedIn: Add Your LinkedIn Profile Here
