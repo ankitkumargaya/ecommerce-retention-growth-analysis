@@ -555,7 +555,7 @@ This analysis helps stakeholders:
 Aspiring Data Analyst | Product Analytics | SQL | Power BI | Python | Databricks
 
 - GitHub: https://github.com/ankitkumargaya
-- LinkedIn: Add Your LinkedIn Profile Here
+- LinkedIn: https://www.linkedin.com/in/ankit5517
 
 ---
 
