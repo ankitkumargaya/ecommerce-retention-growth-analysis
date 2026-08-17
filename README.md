@@ -364,7 +364,7 @@ The primary growth bottleneck is:
 ## Recommended Actions
 
 - Day 1 onboarding campaigns
-- Day 3 & Day 7 remarketing
+- Day 6 & Day 10 remarketing
 - Repeat purchase incentives
 - Personalized product recommendations
 
@@ -436,8 +436,8 @@ Improves engagement and repeat probability.
 
 | KPI | Current | Expected |
 |---|---|---|
-| 30-Day Repeat Rate | ~13% | 20–25% |
-| Avg Time to Second Order | ~102 Days | 30–45 Days |
+| 90-Day Repeat Rate | ~13% | 20–25% |
+| Avg Time to Second Order | ~102 Days | 55–75 Days |
 | Customer LTV | Baseline | +20–40% |
 | Acquisition Dependency | High | Reduced |
 
