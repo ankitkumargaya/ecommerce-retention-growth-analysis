@@ -1,7 +1,7 @@
 
 # 🧪 SQL Queries
 
-This folder contains SQL queries used to build business-ready datasets (Gold Layer).
+This folder contains SQL queries used to build business-ready datasets (Gold Layer). 
 
 ---
 
