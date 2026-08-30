@@ -1,7 +1,7 @@
 use catalog ecommerce_retention;
 use schema analytics;
 use schema gold;
-
+ 
 ---gold customer_lifecycle
 
 CREATE OR REPLACE TABLE ecommerce_retention.gold.customer_lifecycle AS
