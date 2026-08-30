@@ -1,5 +1,5 @@
-# 🚀 E-Commerce Customer Retention & Growth Analysis  
-### Product Analytics Case Study | Databricks + Spark SQL + Python + Power BI
+# 🚀 E-Commerce Customer Retention & Growth Analysis
+### End-to-End Product Analytics Case Study | Databricks + Spark SQL + Python + Power BI
 
 <p align="center">
   <img src="images/overview.png" width="1000">
@@ -7,128 +7,74 @@
 
 ---
 
-# 📌 Project Overview
+## 📌 Project Overview
 
-This project is a complete end-to-end **Product Analytics & Retention Analysis** case study focused on identifying:
+A complete, end-to-end **product analytics and customer retention case study** built on a Bronze → Silver → Gold data architecture, covering the full customer journey from **acquisition → activation → checkout → repeat purchase → returns**.
 
-> Why business growth is slowing despite steady customer acquisition.
+This version extends the original analysis with **full product-level and returns-level data**, which surfaced a sharper and more accurate diagnosis of the business's growth problem than the earlier draft.
 
-The analysis evaluates the full customer lifecycle — from acquisition to repeat purchase — to uncover:
-
-- Retention gaps
-- Funnel inefficiencies
-- Activation bottlenecks
-- Customer lifecycle delays
-- Revenue growth constraints
-
-The project simulates a real-world analytics environment used by modern product and e-commerce companies such as:
-
-- Amazon
-- Flipkart
-- Meesho
-- Zepto
-- Blinkit
-- Swiggy Instamart
+Simulates a real-world analytics environment used by modern product and e-commerce companies such as Amazon, Flipkart, Meesho, Zepto, Blinkit, and Swiggy Instamart.
 
 ---
 
-# 🎯 Business Problem
+## 🎯 Business Objective
 
-The business demonstrates:
+> To diagnose why revenue growth had stalled near ₹2.8M/month despite continued marketing spend and heavy discounting — by tracing the full customer journey from acquisition to repeat purchase to pinpoint exactly where value was leaking, and recommend the levers to convert first-time buyers into a sustainably repeating, profitable customer base.
 
-- Strong customer acquisition
-- Healthy marketing efficiency
-- Positive LTV/CAC ratio
-
-However:
-
-- Revenue growth is plateauing
-- Repeat purchase behavior is weak
-- Customer retention is low during the early lifecycle
+**Key reframe from the original analysis:** the business does not have an acquisition problem — it has a **repeat-purchase and revenue-leakage problem.**
 
 ---
 
-# 🎯 Business Objective
+## 🔍 Key Insights at a Glance
 
-The primary goal of this analysis was to identify:
-
-- Why customers fail to repeat purchases early
-- Which channels acquire high-value customers
-- Where major funnel drop-offs occur
-- How retention impacts long-term growth
-- Which lifecycle stages require optimization
+| # | Insight | Signal |
+|---|---|---|
+| 1 | Revenue is flat, but the customer engine underneath is shrinking | Acquisition down 30% (1,975 → 1,377/month); delivered orders down 33% (2,322 → 1,544/month) |
+| 2 | Repeat-purchase behavior has collapsed | Second-order conversion fell from **96% → 16%** in under a year — the sharpest signal in the dataset |
+| 3 | Retention falls off a cliff after Month 1 | 41% at Month 1 → 23% by Month 3 → ~15% by Month 6 |
+| 4 | The funnel bleeds hardest at the finish line | Cart rate 21.8% but checkout completion only 11.9% — a **~46% last-mile drop-off** |
+| 5 | Acquisition budget doesn't follow efficiency | Referral has the best LTV:CAC (8.5) but isn't the top-funded channel |
+| 6 | Growth is being bought, not earned | **63% of product sales are discounted**; new products are only 32% of sales vs. 68% from the old catalogue |
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 | Tool / Technology | Purpose |
 |---|---|
-| Databricks (Spark SQL) | Large-Scale Data Processing & Analytical Querying |
-| SQL | KPI Validation & Business Analysis |
-| Python (Pandas, NumPy) | Data Cleaning & Feature Engineering |
-| Power BI | Dashboard Development & Visualization |
-| DAX | KPI Calculations & Time Intelligence |
-| Power Query | Data Transformation |
-| Star Schema Modeling | Scalable Analytics Architecture |
+| Databricks (Spark SQL) | Large-scale data processing & analytical querying |
+| SQL | KPI validation & business analysis |
+| Python (Pandas, NumPy) | Data cleaning & feature engineering |
+| Power BI | Dashboard development & visualization |
+| DAX | KPI calculations & time intelligence |
+| Power Query | Data transformation |
+| Star Schema Modeling | Scalable analytics architecture |
 
 ---
 
-# ⚙️ Data Processing & Analytics Workflow
-
-This project follows a modern analytics workflow similar to real-world product and e-commerce companies.
-
-## Workflow Architecture
+## ⚙️ Data Processing & Analytics Workflow
 
 Raw Data → Python Cleaning → Databricks Processing (Spark SQL) → Analytical Tables → Power BI Dashboard
 
----
 
-# 🔥 Databricks & Spark SQL Usage
-
-Databricks and Spark SQL were used to simulate large-scale analytical processing and business KPI validation.
-
-## Spark SQL Analysis Included
-
+### Spark SQL Analysis Included
 - Funnel analysis
-- Retention calculations
-- Cohort analysis
+- Retention & cohort analysis
 - Customer lifecycle analysis
-- Channel performance analysis
+- Channel performance analysis (LTV/CAC)
 - Repeat purchase analysis
-- LTV & CAC analysis
+- Product & category performance
+- Returns & refund analysis
 - Revenue trend analysis
 
-## Why Spark SQL?
-
-Spark SQL enables scalable analytics processing for large datasets and is widely used in modern cloud-based data platforms.
-
-### Benefits
-
-- Faster large-scale querying
-- Distributed processing
-- Better performance for analytical workloads
-- Real-world big data analytics simulation
-
 ---
 
-# 🧱 Data Architecture (Bronze → Silver → Gold)
+## 🧱 Data Architecture (Bronze → Silver → Gold)
 
-The project follows a layered modern analytics architecture.
+### 🥉 Bronze Layer
+Raw source datasets from transactional systems.
 
----
-
-# 🥉 Bronze Layer
-
-Raw source datasets collected from transactional systems.
-
----
-
-# 🥈 Silver Layer
-
-Cleaned and transformed analytical tables.
-
-## Core Tables
+### 🥈 Silver Layer — Core Tables
 
 | Table Name | Description |
 |---|---|
@@ -140,435 +86,168 @@ Cleaned and transformed analytical tables.
 | marketing_events | Campaign interaction tracking |
 | marketing_spend | Channel-level acquisition cost |
 
----
+### 🥇 Gold Layer — Business-Ready Tables
 
-# 🥇 Gold Layer (Business-Ready Tables)
-
-Optimized analytical tables for reporting and KPI tracking.
-
----
-
-## 🔹 activation_funnel
-
-Tracks customer movement through funnel stages:
-
-- Session
-- Product Browsing
-- Add to Cart
-- Checkout
-- Repeat Purchase
-
-### Includes
-
-- Funnel conversion rates
-- Stage-wise drop-offs
-- Activation bottlenecks
+| Table | Tracks |
+|---|---|
+| `activation_funnel` | Session → Browsing → Cart → Checkout → Repeat, with stage-wise drop-offs |
+| `customer_lifecycle` | First/second order date, days to second purchase, repeat flags |
+| `retention_cohort` | Monthly cohort size, retained users, retention % |
+| `channel_ltv` | Customers acquired, revenue, LTV, CAC, LTV:CAC ratio |
+| `product_performance` | Product/category sales, quantity, discount impact, old vs. new SKUs |
+| `returns_refunds` | Order status distribution, return rate, refund value |
 
 ---
 
-## 🔹 customer_lifecycle
-
-Tracks long-term customer behavior.
-
-### Includes
-
-- First order date
-- Second order date
-- Days to second purchase
-- Repeat purchase flags
-- Lifecycle segmentation
-
----
-
-## 🔹 retention_cohort
-
-Monthly cohort retention tracking.
-
-### Includes
-
-- Cohort size
-- Active retained users
-- Retention percentage
-- Long-term retention trends
-
----
-
-## 🔹 channel_ltv
-
-Channel-level profitability and customer quality analysis.
-
-### Includes
-
-- Total customers acquired
-- Revenue contribution
-- Average LTV
-- CAC
-- LTV/CAC ratio
-- Orders per customer
-
----
-
-# 🧠 Analytical Approach
-
-The analysis was structured across key growth layers:
+## 🧠 Analytical Approach
 
 | Growth Layer | Business Focus |
 |---|---|
-| Acquisition | Channel quality & customer acquisition |
-| Activation | First-to-second purchase behavior |
+| Acquisition | Channel quality & efficiency (LTV:CAC) |
+| Activation | Session → cart → checkout conversion |
 | Conversion | Funnel performance & drop-off analysis |
-| Retention | Cohort retention analysis |
-| Monetization | LTV, CAC & revenue efficiency |
+| Retention | Cohort retention & repeat-purchase behavior |
+| Monetization | LTV, CAC, discount dependency, revenue efficiency |
+| Product | Category performance, old vs. new product mix |
+| Post-Purchase | Returns, refunds, order fulfillment health |
 
 ---
 
-# 📊 Key Analysis Performed
+## 📊 Key Analysis Performed
 
-## Customer Acquisition Analysis
-- Channel-wise customer acquisition
-- CAC comparison
-- Customer quality analysis
-
----
-
-## Customer Lifecycle Analysis
-- Time to second purchase
-- Repeat purchase behavior
-- Lifecycle segmentation
+**Customer Acquisition** — channel-wise CAC, LTV:CAC ranking, spend allocation vs. efficiency
+**Customer Lifecycle** — time to second purchase, repeat behavior, LTV segmentation
+**Retention** — monthly cohort retention, early-stage churn, cohort-over-cohort trend
+**Activation Funnel** — session → browsing → cart → checkout, stage-wise drop-off
+**Product & Category** — top products, category performance, discount impact, old vs. new SKU sales
+**Returns & Refunds** — order status distribution, return rate, delivered order trend
 
 ---
 
-## Retention Analysis
-- Monthly cohort retention
-- Early-stage churn analysis
-- Retention trend analysis
+## 🔎 Detailed Key Insights
+
+### 1️⃣ Growth Has Plateaued While the Customer Base Erodes
+Net revenue has held flat near **₹2.8M/month** for a full year. Underneath, acquisition fell from 1,975 → 1,377/month and delivered orders fell from 2,322 → 1,544/month — a **30–33% decline** masked by a stable top line.
+
+### 2️⃣ Acquisition Budget Doesn't Follow Efficiency
+**Referral** delivers the best return of any channel (LTV:CAC **8.5**, CAC ₹53, LTV ₹452) but isn't the top-funded channel — **Organic** is. Email and Influencer, the two weakest channels (LTV:CAC 4.3 and 4.4), together absorb **36% of the ₹471K acquisition budget**.
+
+### 3️⃣ The Activation Funnel Leaks Hardest at the Finish Line
+Of every ~7.8K activated users, only **11.85%** complete checkout, even though **21.83%** add to cart — a **~46% last-mile abandonment** right before payment. This is a checkout UX/trust issue, not a payment-options issue.
+
+### 4️⃣ Repeat-Purchase Behavior Is Breaking Down
+The all-time Second-Order Conversion average (83.29%) hides a collapse: the monthly trend fell from **96% (Mar 2025) to 16% (Feb 2026)** — too sharp to be gradual demand softening, and more likely an operational break in the post-purchase journey. Month 1 retention (40.65%) drops to Month 3 (23.38%), and cohort repeat rates have structurally declined from the mid-40s to the mid-30s over the year.
+
+### 5️⃣ Revenue Is Increasingly Discount-Dependent
+**62.65%** of Gross Product Sales are discounted, spread almost evenly across every category — a blanket strategy, not a targeted one, propping up the flat revenue line.
+
+### 6️⃣ New Products Are Underperforming; Returns Are the Smaller Problem
+New products generate only **32%** of sales vs. **68%** from the old catalogue. Returns are healthy at a **6.9%** return rate — the real problem is upstream: delivered order volume itself is shrinking.
 
 ---
 
-## Funnel Analysis
-- Session → Cart → Checkout → Repeat conversion
-- Funnel drop-off identification
-- Activation bottleneck analysis
+## 💣 Root Cause Analysis
+
+> The business does not have a demand or acquisition problem — it has a **leakage problem**. Value is lost at three specific points: the checkout step, the post-first-purchase engagement window, and an unexplained operational break in second-order conversion starting around November 2025.
 
 ---
 
-## Marketing Efficiency Analysis
-- LTV by channel
-- CAC analysis
-- LTV/CAC efficiency tracking
+## 🚀 Strategic Recommendations
+
+| # | Recommendation | Why It Matters | Expected Impact |
+|---|---|---|---|
+| 1 | Fix the cart-to-checkout drop-off | 46% of cart users abandon before payment | Est. 200–250 additional completed orders per cycle, zero added acquisition spend |
+| 2 | Reallocate 15–20% of Email + Influencer budget into Referral | Referral's LTV:CAC (8.5) is ~2x Email's (4.3) | Higher LTV generated per rupee of acquisition spend |
+| 3 | Root-cause the Nov'25–Feb'26 second-order collapse | Sharp trend break signals an operational issue, not organic decline | Restoring even half the historical rate rebuilds the repeat-customer base |
+| 4 | Launch a Day 8 / 20 / 30 lifecycle campaign | Most repeat purchases already happen in the 8–30 day window (avg. 48 days) | Should lift Month 1 retention toward the 45–48% seen in early cohorts |
+| 5 | Move from blanket to segment-targeted discounting | 63% of sales discounted uniformly across categories | Protects margin on high-LTV segments without hurting conversion |
+| 6 | Improve discoverability & promotion of new products | New products are 32% of sales vs. 68% for old | Grows Gross Product Sales without acquiring new customers |
 
 ---
 
-# 🔍 Key Insights
+## 📈 Expected Business Impact
 
-# 1️⃣ Growth is Acquisition-Driven, Not Retention-Driven
-
-- LTV/CAC ≈ **3.67**
-- 30-day repeat rate only **~13%**
-
-### Business Insight
-
-The business heavily depends on new customer acquisition instead of repeat customer growth.
-
-### Risk
-
-This creates an unsustainable growth model with increasing acquisition dependency.
-
----
-
-# 2️⃣ Early Customer Activation is the Biggest Bottleneck
-
-- Average time to second purchase ≈ **102 days**
-- Large percentage of users never repeat
-
-### Business Insight
-
-Customers are not forming purchasing habits early enough.
-
-### Impact
-
-Delayed repeat behavior slows revenue scaling and reduces long-term customer value.
-
----
-
-# 3️⃣ Major Funnel Drop at Browsing → Add to Cart
-
-Largest customer drop-off occurs before purchase intent formation.
-
-### Possible Causes
-
-- Weak product trust
-- Poor urgency signals
-- Pricing hesitation
-- Lack of reviews/social proof
-
-### Business Impact
-
-The issue is behavioral friction, not technical friction.
-
----
-
-# 4️⃣ Retention Stabilizes After Initial Churn
-
-- Cohort retention stabilizes at **~12–15%**
-
-### Business Insight
-
-Long-term retention is relatively stable.
-
-### Root Problem
-
-The largest issue is early-stage churn immediately after acquisition.
-
----
-
-# 5️⃣ Channel Quality Matters More Than Volume
-
-### Best Performing Channels
-
-- Referral
-- Influencer
-
-### Weak Performing Channels
-
-- Paid Ads
-
-### Business Insight
-
-High acquisition volume does not guarantee high customer value.
-
----
-
-# 6️⃣ Revenue Trend Indicates Growth Plateau
-
-Revenue remains relatively stable despite steady acquisition growth.
-
-### Conclusion
-
-The primary growth bottleneck is:
-
-> Poor retention, not poor acquisition.
-
----
-
-# 💣 Root Cause Analysis
-
-> The core business constraint is weak early customer activation, resulting in low repeat purchase behavior and delayed customer lifecycle progression.
-
----
-
-# 🚀 Strategic Recommendations
-
-# 1️⃣ Improve Early Customer Activation
-
-## Recommended Actions
-
-- Day 1 onboarding campaigns
-- Day 6 & Day 10 remarketing
-- Repeat purchase incentives
-- Personalized product recommendations
-
-## Expected Impact
-
-- Faster repeat purchases
-- Increased LTV
-- Improved retention
-
----
-
-# 2️⃣ Optimize Browsing → Cart Conversion
-
-## Recommended Actions
-
-- Add product reviews & ratings
-- Introduce urgency messaging
-- Improve pricing communication
-- Highlight trust indicators
-
-## Expected Impact
-
-Improves highest-drop funnel stage.
-
----
-
-# 3️⃣ Scale High-ROI Acquisition Channels
-
-## Recommended Actions
-
-- Increase Referral investment
-- Expand Influencer partnerships
-- Reduce inefficient ad spend
-
-## Expected Impact
-
-Higher-quality customers with stronger retention.
-
----
-
-# 4️⃣ Retarget First-Time Buyers
-
-## Recommended Actions
-
-- Re-engage inactive users after 30–60 days
-- Trigger lifecycle-based campaigns
-
-## Expected Impact
-
-Low-cost revenue recovery from already acquired customers.
-
----
-
-# 5️⃣ Introduce Personalization
-
-## Recommended Actions
-
-- Behavioral targeting
-- Dynamic product recommendations
-- Personalized offers
-
-## Expected Impact
-
-Improves engagement and repeat probability.
-
----
-
-# 📈 Expected Business Impact
-
-| KPI | Current | Expected |
+| KPI | Current | Target |
 |---|---|---|
-| 90-Day Repeat Rate | ~13% | 20–25% |
-| Avg Time to Second Order | ~102 Days | 55–75 Days |
-| Customer LTV | Baseline | +20–40% |
-| Acquisition Dependency | High | Reduced |
+| Second-Order Conversion (recent trend) | ~16% | 50%+ |
+| Checkout Completion Rate | 11.85% | 15%+ |
+| Month 1 Retention | 40.65% | 45–48% |
+| Discounted Sales Share | 62.65% | 45–50% |
+| New Product Sales Share | 32% | 40%+ |
 
 ---
 
-# 📊 Dashboard Features
-
-The project includes a multi-page interactive Power BI dashboard.
-
-## Dashboard Pages
+## 📊 Dashboard Pages
 
 - Executive Overview
 - Acquisition & Channel Performance
 - Customer Lifecycle
 - Retention Analysis
 - Activation Funnel
+- **Product & Category Performance** *(new)*
+- **Returns & Refund Analysis** *(new)*
+
+## ⚡ Advanced Power BI Features
+Dynamic KPI selection · Field parameters · Drill-down & drill-through · Interactive filters/slicers · Custom page navigation · Insight buttons · Dynamic titles · YoY/MoM analysis · Conditional formatting · Tooltip enhancements
 
 ---
 
-# ⚡ Advanced Power BI Features
+## 🔑 Key Skills Demonstrated
 
-## Implemented Features
-
-- Dynamic KPI Selection
-- Field Parameters
-- Drill-down Functionality
-- Drill-through Navigation
-- Interactive Filters & Slicers
-- Custom Page Navigation
-- Insight Buttons for Storytelling
-- Dynamic Titles
-- YoY & MoM Growth Analysis
-- Conditional Formatting
-- Tooltip Enhancements
+Product Analytics · Customer Retention & Cohort Analysis · Funnel Analytics · Customer Lifecycle Analytics · Spark SQL · Databricks · Advanced SQL · Power BI Dashboarding · DAX · Data Modeling · Business Intelligence · Data Storytelling
 
 ---
 
-# 🔑 Key Skills Demonstrated
+## 📸 Dashboard Preview
 
-- Product Analytics
-- Customer Retention Analysis
-- Funnel Analytics
-- Cohort Analysis
-- Customer Lifecycle Analytics
-- Spark SQL
-- Databricks
-- SQL Analytics
-- Power BI Dashboarding
-- DAX Calculations
-- Data Modeling
-- Business Intelligence
-- Data Storytelling
+### 🔹 Executive Overview
+<p align="center"><img src="images/overview.png" width="1000"></p>
 
----
+### 🔹 Acquisition & Channel Performance
+<p align="center"><img src="images/acquisition.png" width="1000"></p>
 
-# 📸 Dashboard Preview
+### 🔹 Customer Lifecycle
+<p align="center"><img src="images/lifecycle.png" width="1000"></p>
 
-## 🔹 Executive Overview
+### 🔹 Retention Analysis
+<p align="center"><img src="images/retention.png" width="1000"></p>
 
-<p align="center">
-  <img src="images/overview.png" width="1000">
-</p>
+### 🔹 Activation Funnel
+<p align="center"><img src="images/funnel.png" width="1000"></p>
+
+### 🔹 Product & Category Performance
+<p align="center"><img src="images/product.png" width="1000"></p>
+
+### 🔹 Returns & Refund Analysis
+<p align="center"><img src="images/returns.png" width="1000"></p>
 
 ---
 
-## 🔹 Acquisition & Channel Performance
-
-<p align="center">
-  <img src="images/acquisition.png" width="1000">
-</p>
-
----
-
-## 🔹 Customer Lifecycle
-
-<p align="center">
-  <img src="images/lifecycle.png" width="1000">
-</p>
-
----
-
-## 🔹 Retention Analysis
-
-<p align="center">
-  <img src="images/retention.png" width="1000">
-</p>
-
----
-
-## 🔹 Activation Funnel
-
-<p align="center">
-  <img src="images/funnel.png" width="1000">
-</p>
-
----
-
-# 💼 Business Impact
+## 💼 Business Impact
 
 This analysis helps stakeholders:
-
-- Identify retention bottlenecks
-- Improve customer activation
-- Reduce acquisition dependency
-- Increase customer lifetime value
-- Improve repeat purchase behavior
-- Optimize marketing investment efficiency
-- Support retention-led growth strategy
+- Identify exactly where revenue is leaking across the funnel
+- Fix the checkout step driving the largest single conversion loss
+- Diagnose and reverse the second-order conversion collapse
+- Reduce reliance on acquisition spend and discounting
+- Shift toward a retention-led, margin-healthy growth strategy
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
-## Ankit Kumar  
-Aspiring Data Analyst | Product Analytics | SQL | Power BI | Python | Databricks
+**Ankit Kumar**
+Data Analyst | Product Analytics | SQL | Power BI | Python | Databricks
 
 - GitHub: https://github.com/ankitkumargaya
 - LinkedIn: https://www.linkedin.com/in/ankit5517
 
 ---
 
-# 📌 Final Conclusion
+## 📌 Final Conclusion
 
-This project demonstrates how product analytics and customer lifecycle analysis can uncover the real drivers behind business growth constraints.
+> The primary issue is not customer acquisition — it's checkout friction, a broken second-order journey, and growth that's increasingly bought through discounting rather than earned through retention.
 
-The analysis reveals that:
+By fixing checkout, diagnosing the second-order break, and shifting spend toward the most efficient channel, the business can move from:
 
-> The primary issue is not customer acquisition, but poor early customer activation and low repeat purchase behavior.
-
-By improving retention and reducing lifecycle friction, the business can transition from:
-
-### Acquisition-Led Growth → Retention-Led Sustainable Growth
-
-This project reflects real-world analytical thinking used in modern product, fintech, and e-commerce companies.
+### Acquisition-Led, Discount-Dependent Growth → Retention-Led, Sustainable Growth
