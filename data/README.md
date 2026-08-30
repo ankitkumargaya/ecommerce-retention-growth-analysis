@@ -2,7 +2,7 @@
 
 This project uses a structured e-commerce dataset designed for product analytics.
 
----
+--- 
 
 ## 📁 Tables Included
 
