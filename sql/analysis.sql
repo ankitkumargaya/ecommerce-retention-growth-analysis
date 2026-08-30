@@ -2,7 +2,7 @@ use catalog ecommerce_retention;
 use schema analytics;
 
 
-
+ 
 -- What percentage of customers place a second order within 30 days of their first order?
 
 WITH delivered_orders AS (
