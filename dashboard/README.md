@@ -5,7 +5,7 @@ This folder contains the Power BI dashboard file for the project.
 ---
 
 ## 📁 File
-- `ecommerce_dashboard.pbix`
+- `Customer Retention Analysis updated.pbix`
 
 ---
 
