@@ -1,5 +1,5 @@
 # 📸 Dashboard Images
-
+ 
 This folder contains screenshots of the Power BI dashboard used in this project.
 
 These visuals represent different stages of the customer lifecycle and business performance analysis.
