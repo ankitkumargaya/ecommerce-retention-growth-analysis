@@ -1,5 +1,5 @@
 # Data Cleaning Summary
-
+ 
 This project cleans the raw e-commerce files and creates a final customer retention table for analysis.
 
 ## Files Used
