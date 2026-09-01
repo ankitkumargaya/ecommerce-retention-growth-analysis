@@ -1,3 +1,60 @@
+# 🚀 E-Commerce Customer Retention & Growth Analysis
+### End-to-End Product Analytics Case Study | Databricks + Spark SQL + Python + Power BI
+
+<p align="center">
+  <img src="images/overview.png" width="1000">
+</p>
+
+---
+
+## 📌 Project Overview
+
+A complete, end-to-end **product analytics and customer retention case study** built on a Bronze → Silver → Gold data architecture, covering the full customer journey from **acquisition → activation → checkout → repeat purchase → returns**.
+
+This version extends the original analysis with **full product-level and returns-level data**, which surfaced a sharper and more accurate diagnosis of the business's growth problem than the earlier draft.
+
+Simulates a real-world analytics environment used by modern product and e-commerce companies such as Amazon, Flipkart, Meesho, Zepto, Blinkit, and Swiggy Instamart.
+
+---
+
+## 🎯 Business Objective
+
+> To diagnose why revenue fell sharply in the final two months of the year despite continued marketing spend and heavy discounting — by tracing the full customer journey from acquisition to repeat purchase to pinpoint exactly where value was leaking, and recommend the levers to convert first-time buyers into a sustainably repeating, profitable customer base.
+
+**Key reframe from the original analysis:** the business does not have an acquisition problem — it has a **repeat-purchase and revenue-leakage problem**, and that leakage accelerated sharply at the end of the year.
+
+---
+
+## 🔍 Key Insights at a Glance
+
+| # | Insight | Signal |
+|---|---|---|
+| 1 | Revenue fell sharply in the final two months of the year | Down ~40% in January and a further ~8.8% in February — the steepest two-month decline in the dataset |
+| 2 | The customer engine underneath is shrinking too | Acquisition down 30% (1,975 → 1,377/month); delivered orders down 33% (2,322 → 1,544/month); Total Orders down 31% (2,565 → 1,767/month) |
+| 3 | Repeat-purchase behavior has collapsed | Second-order conversion fell from **96% → 16%** in under a year — the sharpest signal in the dataset |
+| 4 | Retention falls off a cliff after Month 1 | 41% at Month 1 → 23% by Month 3 → ~15% by Month 6 |
+| 5 | The funnel bleeds hardest at the finish line | Cart rate 21.8% but checkout completion only 11.9% — a **~46% last-mile drop-off** |
+| 6 | Acquisition budget doesn't follow efficiency | Referral has the best LTV:CAC (8.5) but isn't the top-funded channel |
+| 7 | Growth is being bought, not earned | **63% of product sales are discounted**; new products are only 32% of sales vs. 68% from the old catalogue |
+
+---
+
+## 🛠 Tech Stack
+
+| Tool / Technology | Purpose |
+|---|---|
+| Databricks (Spark SQL) | Large-scale data processing & analytical querying |
+| SQL | KPI validation & business analysis |
+| Python (Pandas, NumPy) | Data cleaning & feature engineering |
+| Power BI | Dashboard development & visualization |
+| DAX | KPI calculations & time intelligence |
+| Power Query | Data transformation |
+| Star Schema Modeling | Scalable analytics architecture |
+
+---
+
+## ⚙️ Data Processing & Analytics Workflow
+Raw Data → Python Cleaning → Databricks Processing (Spark SQL) → Analytical Tables → Power BI Dashboard
 
 ### Spark SQL Analysis Included
 - Funnel analysis
@@ -128,8 +185,8 @@ New products generate only **32%** of sales vs. **68%** from the old catalogue. 
 - Customer Lifecycle
 - Retention Analysis
 - Activation Funnel
-- **Product & Category Performance**
-- **Returns & Refund Analysis**
+- **Product & Category Performance** *(new)*
+- **Returns & Refund Analysis** *(new)*
 
 ## ⚡ Advanced Power BI Features
 Dynamic KPI selection · Field parameters · Drill-down & drill-through · Interactive filters/slicers · Custom page navigation · Insight buttons · Dynamic titles · YoY/MoM analysis · Conditional formatting · Tooltip enhancements
