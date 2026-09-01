@@ -128,8 +128,8 @@ New products generate only **32%** of sales vs. **68%** from the old catalogue. 
 - Customer Lifecycle
 - Retention Analysis
 - Activation Funnel
-- **Product & Category Performance** *(new)*
-- **Returns & Refund Analysis** *(new)*
+- **Product & Category Performance**
+- **Returns & Refund Analysis**
 
 ## ⚡ Advanced Power BI Features
 Dynamic KPI selection · Field parameters · Drill-down & drill-through · Interactive filters/slicers · Custom page navigation · Insight buttons · Dynamic titles · YoY/MoM analysis · Conditional formatting · Tooltip enhancements
