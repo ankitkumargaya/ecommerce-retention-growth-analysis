@@ -5,6 +5,19 @@
   <img src="images/overview.png" width="1000">
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Databricks-Spark%20SQL-FF3621?style=flat-square&logo=databricks&logoColor=white">
+  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=flat-square&logo=powerbi&logoColor=black">
+  <img src="https://img.shields.io/badge/Python-Pandas%20%7C%20NumPy-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/SQL-Advanced-4479A1?style=flat-square&logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/Framework-What%2FWhy%2FAction%2FRisk-1F3864?style=flat-square">
+</p>
+
+---
+
+## 📑 Table of Contents
+[Overview](#-project-overview) · [Objective](#-business-objective) · [Insights at a Glance](#-key-insights-at-a-glance) · [Tech Stack](#-tech-stack) · [Data Architecture](#-data-architecture-bronze--silver--gold) · [Findings (What/Why/Action/Risk)](#-findings--recommendations-whatwhyactionrisk) · [Expected Impact](#-expected-business-impact) · [Dashboard Preview](#-dashboard-preview) · [Author](#-author)
+
 ---
 
 ## 📌 Project Overview
@@ -30,12 +43,12 @@ Simulates a real-world analytics environment used by modern product and e-commer
 | # | Insight | Signal |
 |---|---|---|
 | 1 | Revenue fell sharply in the final two months of the year | Down ~40% in January and a further ~8.8% in February — the steepest two-month decline in the dataset |
-| 2 | The customer engine underneath is shrinking too | Acquisition down 30% (1,975 → 1,377/month); delivered orders down 33% (2,322 → 1,544/month); Total Orders down 31% (2,565 → 1,767/month) |
-| 3 | Repeat-purchase behavior has collapsed | Second-order conversion fell from **96% → 16%** in under a year — the sharpest signal in the dataset |
+| 2 | The customer engine underneath is shrinking too | Acquisition down 30% (1,975 → 1,377/month); Total Orders down 31% (2,565 → 1,767/month) |
+| 3 | Repeat-purchase behavior has collapsed | Second-order conversion fell from **96% → 16%** in under a year |
 | 4 | Retention falls off a cliff after Month 1 | 41% at Month 1 → 23% by Month 3 → ~15% by Month 6 |
 | 5 | The funnel bleeds hardest at the finish line | Cart rate 21.8% but checkout completion only 11.9% — a **~46% last-mile drop-off** |
 | 6 | Acquisition budget doesn't follow efficiency | Referral has the best LTV:CAC (8.5) but isn't the top-funded channel |
-| 7 | Growth is being bought, not earned | **63% of product sales are discounted**; new products are only 32% of sales vs. 68% from the old catalogue |
+| 7 | Growth is being bought, not earned | **63% of sales are discounted**; new products are only 32% of sales |
 
 ---
 
@@ -56,24 +69,12 @@ Simulates a real-world analytics environment used by modern product and e-commer
 ## ⚙️ Data Processing & Analytics Workflow
 Raw Data → Python Cleaning → Databricks Processing (Spark SQL) → Analytical Tables → Power BI Dashboard
 
-### Spark SQL Analysis Included
-- Funnel analysis
-- Retention & cohort analysis
-- Customer lifecycle analysis
-- Channel performance analysis (LTV/CAC)
-- Repeat purchase analysis
-- Product & category performance
-- Returns & refund analysis
-- Revenue trend analysis
-
 ---
 
 ## 🧱 Data Architecture (Bronze → Silver → Gold)
 
-### 🥉 Bronze Layer
-Raw source datasets from transactional systems.
-
-### 🥈 Silver Layer — Core Tables
+<details>
+<summary><b>🥈 Silver Layer — Core Tables</b> (click to expand)</summary>
 
 | Table Name | Description |
 |---|---|
@@ -85,7 +86,10 @@ Raw source datasets from transactional systems.
 | marketing_events | Campaign interaction tracking |
 | marketing_spend | Channel-level acquisition cost |
 
-### 🥇 Gold Layer — Business-Ready Tables
+</details>
+
+<details>
+<summary><b>🥇 Gold Layer — Business-Ready Tables</b> (click to expand)</summary>
 
 | Table | Tracks |
 |---|---|
@@ -96,72 +100,85 @@ Raw source datasets from transactional systems.
 | `product_performance` | Product/category sales, quantity, discount impact, old vs. new SKUs |
 | `returns_refunds` | Order status distribution, return rate, refund value |
 
+</details>
+
 ---
 
-## 🧠 Analytical Approach
+## 🔎 Findings & Recommendations (What/Why/Action/Risk)
 
-| Growth Layer | Business Focus |
+> Each finding below follows the **What → Why → Action → Risk** structure used for stakeholder-ready analysis. Click any finding to expand it.
+
+<details open>
+<summary><b>1️⃣ Revenue and Order Volume Collapsed Together at Year-End</b></summary>
+
+| | |
 |---|---|
-| Acquisition | Channel quality & efficiency (LTV:CAC) |
-| Activation | Session → cart → checkout conversion |
-| Conversion | Funnel performance & drop-off analysis |
-| Retention | Cohort retention & repeat-purchase behavior |
-| Monetization | LTV, CAC, discount dependency, revenue efficiency |
-| Product | Category performance, old vs. new product mix |
-| Post-Purchase | Returns, refunds, order fulfillment health |
+| 📌 **WHAT** | Revenue fell ~40% in January and a further ~8.8% in February — the steepest two-month decline in the dataset. Total Orders fell 31% over the year (2,565 → 1,767/month), acquisition fell 30%, and delivered orders fell 33%. |
+| 🎯 **WHY** | Four metrics dropped together in the same window — one shared cause, not four unrelated problems. |
+| 🛠️ **ACTION** | Run a single root-cause investigation (marketing timing, stock availability, platform changes) before adding spend. |
+| ⚠️ **RISK** | Left uninvestigated, the same drop can recur in the next low-volume window. |
 
----
+</details>
 
-## 📊 Key Analysis Performed
+<details>
+<summary><b>2️⃣ Second-Order Conversion Has Collapsed</b></summary>
 
-**Customer Acquisition** — channel-wise CAC, LTV:CAC ranking, spend allocation vs. efficiency
-**Customer Lifecycle** — time to second purchase, repeat behavior, LTV segmentation
-**Retention** — monthly cohort retention, early-stage churn, cohort-over-cohort trend
-**Activation Funnel** — session → browsing → cart → checkout, stage-wise drop-off
-**Product & Category** — top products, category performance, discount impact, old vs. new SKU sales
-**Returns & Refunds** — order status distribution, return rate, order volume trend
+| | |
+|---|---|
+| 📌 **WHAT** | Second-order conversion fell from **96% → 16%** in under a year. The 83.29% all-time average conceals this. |
+| 🎯 **WHY** | Too sharp for gradual demand softening — likely an operational break (CRM/notification, app, fulfillment) starting ~Nov 2025. |
+| 🛠️ **ACTION** | Root-cause the Nov'25–Feb'26 cohorts specifically before assuming it's a demand issue. |
+| ⚠️ **RISK** | Every acquisition rupee increasingly buys a one-time customer instead of a repeat one. |
 
----
+</details>
 
-## 🔎 Detailed Key Insights
+<details>
+<summary><b>3️⃣ Retention Falls Off a Cliff After Month 1</b></summary>
 
-### 1️⃣ Revenue Fell Sharply in the Final Two Months of the Year
-After holding in the ₹225–274K range for most of the year, revenue dropped to **₹148.1K in January (~40% decline)** and fell further to **₹135.0K in February (~8.8% decline)** — the steepest two-month slide in the entire dataset. This lines up with a parallel drop in order volume: Total Orders fell from roughly **2,565 → 1,767/month (-31%)** over the year, alongside a 30% decline in acquisition and a 33% decline in delivered orders. Revenue, orders, delivered volume, and acquisition are all contracting together in the same window — a single, coordinated slowdown rather than four unrelated symptoms.
+| | |
+|---|---|
+| 📌 **WHAT** | 40.65% retained at Month 1 → 23.38% by Month 3 → ~14.68% by Month 6. |
+| 🎯 **WHY** | Most repeat purchases happen within an 8–30 day window (avg. 48 days) — the highest-leverage moment in the lifecycle. |
+| 🛠️ **ACTION** | Launch a Day 8 / 20 / 30 lifecycle campaign targeting that exact window. |
+| ⚠️ **RISK** | Without intervention, retention keeps compressing toward the ~15% Month 6 floor. |
 
-### 2️⃣ Acquisition Budget Doesn't Follow Efficiency
-**Referral** delivers the best return of any channel (LTV:CAC **8.5**, CAC ₹53, LTV ₹452) but isn't the top-funded channel — **Organic** is. Email and Influencer, the two weakest channels (LTV:CAC 4.3 and 4.4), together absorb **36% of the ₹471K acquisition budget**.
+</details>
 
-### 3️⃣ The Activation Funnel Leaks Hardest at the Finish Line
-Of every ~7.8K activated users, only **11.85%** complete checkout, even though **21.83%** add to cart — a **~46% last-mile abandonment** right before payment. This is a checkout UX/trust issue, not a payment-options issue.
+<details>
+<summary><b>4️⃣ Checkout Is the Single Largest Funnel Leak</b></summary>
 
-### 4️⃣ Repeat-Purchase Behavior Is Breaking Down
-The all-time Second-Order Conversion average (83.29%) hides a collapse: the monthly trend fell from **96% (Mar 2025) to 16% (Feb 2026)** — too sharp to be gradual demand softening, and more likely an operational break in the post-purchase journey. Month 1 retention (40.65%) drops to Month 3 (23.38%), and cohort repeat rates have structurally declined from the mid-40s to the mid-30s over the year.
+| | |
+|---|---|
+| 📌 **WHAT** | 21.83% add to cart, but only **11.85%** complete checkout — a ~46% last-mile abandonment. |
+| 🎯 **WHY** | The steepest single-step drop in the entire funnel — points to a checkout-specific UX or trust issue. |
+| 🛠️ **ACTION** | Audit payment failures, hidden fees, forced signup, and load time — prioritize before upper-funnel work. |
+| ⚠️ **RISK** | Fixing earlier stages first improves top-of-funnel metrics without moving revenue. |
 
-### 5️⃣ Revenue Is Increasingly Discount-Dependent
-**62.65%** of Gross Product Sales are discounted, spread almost evenly across every category — a blanket strategy, not a targeted one, and part of what's propping up revenue even as it slides.
+</details>
 
-### 6️⃣ New Products Are Underperforming; Returns Are the Smaller Problem
-New products generate only **32%** of sales vs. **68%** from the old catalogue. Returns are healthy at a **6.9%** return rate — the real problem is upstream: order volume itself is shrinking.
+<details>
+<summary><b>5️⃣ Acquisition Budget Doesn't Match Channel Efficiency</b></summary>
 
----
+| | |
+|---|---|
+| 📌 **WHAT** | Referral has the best LTV:CAC (**8.5**) but isn't top-funded — Organic is. Email + Influencer (weakest, 4.3–4.4) absorb 36% of spend. |
+| 🎯 **WHY** | Budget follows historical habit, not current return. |
+| 🛠️ **ACTION** | Shift 15–20% of Email/Influencer spend into Referral — incrementally, not all at once. |
+| ⚠️ **RISK** | Referral CAC may rise as the channel scales — test before committing the full shift. |
 
-## 💣 Root Cause Analysis
+</details>
 
-> The business does not have a demand or acquisition problem — it has a **leakage problem that accelerated sharply at year-end**. Value is lost at three specific points: the checkout step, the post-first-purchase engagement window, and an unexplained operational break in second-order conversion starting around November 2025 — all converging with the revenue and order-volume collapse in January–February.
+<details>
+<summary><b>6️⃣ Growth Is Increasingly Bought Through Discounting, Not Earned</b></summary>
 
----
+| | |
+|---|---|
+| 📌 **WHAT** | 62.65% of sales are discounted across every category. New products are only 32% of sales vs. 68% from the old catalogue. |
+| 🎯 **WHY** | Blanket discounts compress margin on customers who'd convert anyway; new SKUs lack visibility. |
+| 🛠️ **ACTION** | Move to segment-targeted discounting + improve new-product placement and promotion. |
+| ⚠️ **RISK** | Pulling discounts too fast could suppress conversion further while volume is already declining. |
 
-## 🚀 Strategic Recommendations
-
-| # | Recommendation | Why It Matters | Expected Impact |
-|---|---|---|---|
-| 1 | Investigate the Jan–Feb revenue and order collapse as one connected event | Revenue (-40% then -8.8%), Total Orders (-31% over the year), delivered orders, and acquisition all decline together in the same window | A single root-cause investigation is more likely to find the real driver than treating each metric's decline separately — and whatever caused it should be reversible if identified |
-| 2 | Fix the cart-to-checkout drop-off | 46% of cart users abandon before payment | Est. 200–250 additional completed orders per cycle, zero added acquisition spend |
-| 3 | Reallocate 15–20% of Email + Influencer budget into Referral | Referral's LTV:CAC (8.5) is ~2x Email's (4.3) | Higher LTV generated per rupee of acquisition spend |
-| 4 | Root-cause the Nov'25–Feb'26 second-order collapse | Sharp trend break signals an operational issue, not organic decline | Restoring even half the historical rate rebuilds the repeat-customer base |
-| 5 | Launch a Day 8 / 20 / 30 lifecycle campaign | Most repeat purchases already happen in the 8–30 day window (avg. 48 days) | Should lift Month 1 retention toward the 45–48% seen in early cohorts |
-| 6 | Move from blanket to segment-targeted discounting | 63% of sales discounted uniformly across categories | Protects margin on high-LTV segments without hurting conversion |
-| 7 | Improve discoverability & promotion of new products | New products are 32% of sales vs. 68% for old | Grows Gross Product Sales without acquiring new customers |
+</details>
 
 ---
 
@@ -169,8 +186,8 @@ New products generate only **32%** of sales vs. **68%** from the old catalogue. 
 
 | KPI | Current | Target |
 |---|---|---|
-| Monthly Revenue Trend | -8.8% MoM (Feb), -40% MoM (Jan) | Stabilize month-over-month movement |
-| Second-Order Conversion (recent trend) | ~16% | 50%+ |
+| Revenue MoM Movement | -40% (Jan), -8.8% (Feb) | Stabilize / positive |
+| Second-Order Conversion (recent) | ~16% | 50%+ |
 | Checkout Completion Rate | 11.85% | 15%+ |
 | Month 1 Retention | 40.65% | 45–48% |
 | Discounted Sales Share | 62.65% | 45–50% |
@@ -201,37 +218,50 @@ Product Analytics · Customer Retention & Cohort Analysis · Funnel Analytics ·
 
 ## 📸 Dashboard Preview
 
-### 🔹 Executive Overview
+<details>
+<summary><b>🔹 Executive Overview</b></summary>
 <p align="center"><img src="images/overview.png" width="1000"></p>
+</details>
 
-### 🔹 Acquisition & Channel Performance
+<details>
+<summary><b>🔹 Acquisition & Channel Performance</b></summary>
 <p align="center"><img src="images/acquisition.png" width="1000"></p>
+</details>
 
-### 🔹 Customer Lifecycle
+<details>
+<summary><b>🔹 Customer Lifecycle</b></summary>
 <p align="center"><img src="images/lifecycle.png" width="1000"></p>
+</details>
 
-### 🔹 Retention Analysis
+<details>
+<summary><b>🔹 Retention Analysis</b></summary>
 <p align="center"><img src="images/retention.png" width="1000"></p>
+</details>
 
-### 🔹 Activation Funnel
+<details>
+<summary><b>🔹 Activation Funnel</b></summary>
 <p align="center"><img src="images/funnel.png" width="1000"></p>
+</details>
 
-### 🔹 Product & Category Performance
+<details>
+<summary><b>🔹 Product & Category Performance</b></summary>
 <p align="center"><img src="images/product.png" width="1000"></p>
+</details>
 
-### 🔹 Returns & Refund Analysis
+<details>
+<summary><b>🔹 Returns & Refund Analysis</b></summary>
 <p align="center"><img src="images/returns.png" width="1000"></p>
+</details>
 
 ---
 
 ## 💼 Business Impact
 
 This analysis helps stakeholders:
-- Understand why revenue and order volume both collapsed in the same window
-- Identify exactly where revenue is leaking across the funnel
+- Understand why revenue and order volume collapsed in the same window
 - Fix the checkout step driving the largest single conversion loss
 - Diagnose and reverse the second-order conversion collapse
-- Reduce reliance on acquisition spend and discounting
+- Reduce reliance on acquisition spend and blanket discounting
 - Shift toward a retention-led, margin-healthy growth strategy
 
 ---
@@ -249,7 +279,5 @@ Data Analyst | Product Analytics | SQL | Power BI | Python | Databricks
 ## 📌 Final Conclusion
 
 > The primary issue is not customer acquisition — it's a coordinated year-end collapse in revenue and order volume, compounded by checkout friction, a broken second-order journey, and growth that's increasingly bought through discounting rather than earned through retention.
-
-By investigating the Jan–Feb collapse, fixing checkout, diagnosing the second-order break, and shifting spend toward the most efficient channel, the business can move from:
 
 ### Acquisition-Led, Discount-Dependent Growth → Retention-Led, Sustainable Growth
