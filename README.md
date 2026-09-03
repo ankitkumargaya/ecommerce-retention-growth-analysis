@@ -1,5 +1,5 @@
 # 🚀 E-Commerce Customer Retention & Growth Analysis
-### Senior Analyst Findings Report | Databricks + Spark SQL + Python + Power BI
+### Analyst Findings Report | Databricks + Spark SQL + Python + Power BI
 
 <p align="center">
   <img src="images/overview.png" width="1000">
