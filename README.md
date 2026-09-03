@@ -15,8 +15,72 @@
 
 ---
 
+## 🎛️ Dashboard Page Switcher
+### 👇 Click any page to jump straight to it
+
+<p align="center">
+
+[![Executive Overview](https://img.shields.io/badge/📊_EXECUTIVE_OVERVIEW-6A0DAD?style=for-the-badge)](#dash-overview)
+[![Acquisition & Channel](https://img.shields.io/badge/📈_ACQUISITION_%26_CHANNEL-2E7D32?style=for-the-badge)](#dash-acquisition)
+[![Customer Lifecycle](https://img.shields.io/badge/🔄_CUSTOMER_LIFECYCLE-B71C1C?style=for-the-badge)](#dash-lifecycle)
+
+[![Retention Analysis](https://img.shields.io/badge/📉_RETENTION_ANALYSIS-C9A227?style=for-the-badge)](#dash-retention)
+[![Activation Funnel](https://img.shields.io/badge/🧭_ACTIVATION_FUNNEL-00796B?style=for-the-badge)](#dash-funnel)
+[![Product & Category](https://img.shields.io/badge/🛍️_PRODUCT_%26_CATEGORY-1A237E?style=for-the-badge)](#dash-product)
+[![Returns & Refund](https://img.shields.io/badge/↩️_RETURNS_%26_REFUND-8E24AA?style=for-the-badge)](#dash-returns)
+
+</p>
+
+---
+
+## 📸 Dashboard Preview
+
+<a id="dash-overview"></a>
+<details open>
+<summary><b>🔹 Executive Overview</b></summary>
+<p align="center"><img src="images/overview.png" width="1000"></p>
+</details>
+
+<a id="dash-acquisition"></a>
+<details>
+<summary><b>🔹 Acquisition & Channel Performance</b></summary>
+<p align="center"><img src="images/acquisition.png" width="1000"></p>
+</details>
+
+<a id="dash-lifecycle"></a>
+<details>
+<summary><b>🔹 Customer Lifecycle</b></summary>
+<p align="center"><img src="images/lifecycle.png" width="1000"></p>
+</details>
+
+<a id="dash-retention"></a>
+<details>
+<summary><b>🔹 Retention Analysis</b></summary>
+<p align="center"><img src="images/retention.png" width="1000"></p>
+</details>
+
+<a id="dash-funnel"></a>
+<details>
+<summary><b>🔹 Activation Funnel</b></summary>
+<p align="center"><img src="images/funnel.png" width="1000"></p>
+</details>
+
+<a id="dash-product"></a>
+<details>
+<summary><b>🔹 Product & Category Performance</b></summary>
+<p align="center"><img src="images/product.png" width="1000"></p>
+</details>
+
+<a id="dash-returns"></a>
+<details>
+<summary><b>🔹 Returns & Refund Analysis</b></summary>
+<p align="center"><img src="images/returns.png" width="1000"></p>
+</details>
+
+---
+
 ## 📑 Table of Contents
-[TL;DR](#-tldr--severity-snapshot) · [Objective](#-business-objective) · [Where Value Leaks](#-where-value-leaks-the-funnel-map) · [Deep Analysis](#-deep-analysis-whatwhyactionrisk) · [Root Cause Map](#-root-cause-map-how-the-findings-connect) · [Priority Matrix](#-recommendation-priority-matrix) · [Expected Impact](#-expected-business-impact) · [Dashboard Preview](#-dashboard-preview) · [Author](#-author)
+[Dashboard Switcher](#-dashboard-page-switcher) · [TL;DR](#-tldr--severity-snapshot) · [Objective](#-business-objective) · [Where Value Leaks](#-where-value-leaks-the-funnel-map) · [Deep Analysis](#-deep-analysis-whatwhyactionrisk) · [Root Cause Map](#-root-cause-map-how-the-findings-connect) · [Priority Matrix](#-recommendation-priority-matrix) · [Expected Impact](#-expected-business-impact) · [Author](#-author)
 
 ---
 
@@ -24,36 +88,12 @@
 
 | Finding | Severity | Impact in One Line |
 |---|---|---|
-| 1. Revenue & order collapse at year-end | 
-
-![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)
-
- | Revenue -40% (Jan), -8.8% (Feb) — steepest 2-month drop in the dataset |
-| 2. Second-order conversion collapse | 
-
-![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)
-
- | 96% → 16% in under a year |
-| 3. Checkout is the biggest funnel leak | 
-
-![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)
-
- | 46% abandon between cart and checkout |
-| 4. Retention falls off a cliff after Month 1 | 
-
-![High](https://img.shields.io/badge/-HIGH-D9822B?style=flat-square)
-
- | 41% → 23% → ~15% (Month 1 → 3 → 6) |
-| 5. Budget doesn't match channel efficiency | 
-
-![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square)
-
- | Best channel (LTV:CAC 8.5) isn't top-funded |
-| 6. Growth bought via discounting, not earned | 
-
-![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square)
-
- | 63% of sales discounted; new products = 32% of sales |
+| 1. Revenue & order collapse at year-end | ![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square) | Revenue -40% (Jan), -8.8% (Feb) — steepest 2-month drop in the dataset |
+| 2. Second-order conversion collapse | ![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square) | 96% → 16% in under a year |
+| 3. Checkout is the biggest funnel leak | ![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square) | 46% abandon between cart and checkout |
+| 4. Retention falls off a cliff after Month 1 | ![High](https://img.shields.io/badge/-HIGH-D9822B?style=flat-square) | 41% → 23% → ~15% (Month 1 → 3 → 6) |
+| 5. Budget doesn't match channel efficiency | ![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square) | Best channel (LTV:CAC 8.5) isn't top-funded |
+| 6. Growth bought via discounting, not earned | ![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square) | 63% of sales discounted; new products = 32% of sales |
 
 ---
 
@@ -88,11 +128,7 @@ The steepest single-step loss in the entire journey isn't at the top — it's th
 ## 🔬 Deep Analysis (What / Why / Action / Risk)
 
 <details open>
-<summary><b>1️⃣ Revenue and Order Volume Collapsed Together at Year-End</b> &nbsp; 
-
-![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)
-
-</summary>
+<summary><b>1️⃣ Revenue and Order Volume Collapsed Together at Year-End</b> &nbsp; ![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)</summary>
 
 | | |
 |---|---|
@@ -104,11 +140,7 @@ The steepest single-step loss in the entire journey isn't at the top — it's th
 </details>
 
 <details>
-<summary><b>2️⃣ Second-Order Conversion Has Collapsed</b> &nbsp; 
-
-![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)
-
-</summary>
+<summary><b>2️⃣ Second-Order Conversion Has Collapsed</b> &nbsp; ![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)</summary>
 
 | | |
 |---|---|
@@ -120,11 +152,7 @@ The steepest single-step loss in the entire journey isn't at the top — it's th
 </details>
 
 <details>
-<summary><b>3️⃣ Checkout Is the Single Largest Leak in the Funnel</b> &nbsp; 
-
-![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)
-
-</summary>
+<summary><b>3️⃣ Checkout Is the Single Largest Leak in the Funnel</b> &nbsp; ![Critical](https://img.shields.io/badge/-CRITICAL-8B1E1E?style=flat-square)</summary>
 
 | | |
 |---|---|
@@ -136,11 +164,7 @@ The steepest single-step loss in the entire journey isn't at the top — it's th
 </details>
 
 <details>
-<summary><b>4️⃣ Retention Falls Off a Cliff After Month 1</b> &nbsp; 
-
-![High](https://img.shields.io/badge/-HIGH-D9822B?style=flat-square)
-
-</summary>
+<summary><b>4️⃣ Retention Falls Off a Cliff After Month 1</b> &nbsp; ![High](https://img.shields.io/badge/-HIGH-D9822B?style=flat-square)</summary>
 
 | | |
 |---|---|
@@ -152,11 +176,7 @@ The steepest single-step loss in the entire journey isn't at the top — it's th
 </details>
 
 <details>
-<summary><b>5️⃣ Acquisition Budget Doesn't Match Channel Efficiency</b> &nbsp; 
-
-![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square)
-
-</summary>
+<summary><b>5️⃣ Acquisition Budget Doesn't Match Channel Efficiency</b> &nbsp; ![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square)</summary>
 
 | | |
 |---|---|
@@ -168,11 +188,7 @@ The steepest single-step loss in the entire journey isn't at the top — it's th
 </details>
 
 <details>
-<summary><b>6️⃣ Growth Is Increasingly Bought Through Discounting, Not Earned</b> &nbsp; 
-
-![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square)
-
-</summary>
+<summary><b>6️⃣ Growth Is Increasingly Bought Through Discounting, Not Earned</b> &nbsp; ![Medium](https://img.shields.io/badge/-MEDIUM-E0B84C?style=flat-square)</summary>
 
 | | |
 |---|---|
@@ -247,45 +263,6 @@ This is the core insight of the whole analysis: these are not six separate probl
 ```
 Raw Data → Python Cleaning → Databricks (Spark SQL) → Gold-Layer Tables → Power BI Dashboard
 ```
-
----
-
-## 📊 Dashboard Preview
-
-<details>
-<summary><b>🔹 Executive Overview</b></summary>
-<p align="center"><img src="images/overview.png" width="1000"></p>
-</details>
-
-<details>
-<summary><b>🔹 Acquisition & Channel Performance</b></summary>
-<p align="center"><img src="images/acquisition.png" width="1000"></p>
-</details>
-
-<details>
-<summary><b>🔹 Customer Lifecycle</b></summary>
-<p align="center"><img src="images/lifecycle.png" width="1000"></p>
-</details>
-
-<details>
-<summary><b>🔹 Retention Analysis</b></summary>
-<p align="center"><img src="images/retention.png" width="1000"></p>
-</details>
-
-<details>
-<summary><b>🔹 Activation Funnel</b></summary>
-<p align="center"><img src="images/funnel.png" width="1000"></p>
-</details>
-
-<details>
-<summary><b>🔹 Product & Category Performance</b></summary>
-<p align="center"><img src="images/product.png" width="1000"></p>
-</details>
-
-<details>
-<summary><b>🔹 Returns & Refund Analysis</b></summary>
-<p align="center"><img src="images/returns.png" width="1000"></p>
-</details>
 
 ---
 
